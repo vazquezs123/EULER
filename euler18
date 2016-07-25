@@ -1,0 +1,14 @@
+constraints
+- can choose left
+- can choose right
+- can choose none
+
+* goal: get the best possible ranks that are adjacent
+
+*number of elements is summation from 1 to the depth of the tree
+* for each row, rank each node based on value, also mark position, and 
+
+- starting at last row, find max.
+- go up row and search for max
+- if post-row max is adjacent to pre-row max add node to route. 
+- else go to pre row, choose next max, repeat line 9 and 10
