@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-vector<int> isAbundant(int n, vector<int> abundantList);
+bool isAbundant(int n);
 vector<int> getDivisors(int n);
 void printList(vector<int> list);
 bool isAbundantSum(int n);
@@ -22,11 +22,17 @@ int main(){
 	
 	cout << "\nSum: " << sum << endl;
 	*/	
+
+	for(int i = 0; i < 50; i++){
+		if(isAbundant(i))
+			cout << endl << i;
+
+	}
 	return 0;
 }
 
 // checks if 'n' can be written as sum of two abundant numbers
-bool isAbundantSum(int n, vector<int> abundantList){
+bool isAbundantSum(int n){
 	for(int i = 0; i < n; i++){
 		for( int j = 0; j < n; j++){
 			if( (isAbundant(i)) && (isAbundant(j)) && (i + j == n) )
@@ -36,8 +42,9 @@ bool isAbundantSum(int n, vector<int> abundantList){
 	return false;
 }
 
-// check if number is abundant
-vector<int> notAbundantList(int n, vector<int> abundantList){
+/*
+// check if number is abundant not
+vector<int> abundantList(int n){
 	vector<int> divisorList = getDivisors(n);	
 	int divisorsSum = 0;
 	for(int i = 0; i < divisorList.size(); i++){
@@ -49,7 +56,7 @@ vector<int> notAbundantList(int n, vector<int> abundantList){
 	}
 	return abundantList;
 }
-
+*/
 vector<int> getDivisors(int n){
 	int limit = (n % 2 == 0) ? n / 2 : n / 3;
 	vector<int> divisorList;
